@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.fontSize": 11,
+    "editor.rulers": [80],
+    "vim.useSystemClipboard": true,
+    "[cpp]": {
+        "editor.quickSuggestions": false
+    },
+    "[c]": {
+        "editor.quickSuggestions": false
+    }
+}
