@@ -9,5 +9,8 @@
         "*.stfu": "json"
     },
     "vim.disableAnnoyingNeovimMessage": true,
-    "vim.handleKeys": {"<C-f>": false}
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-w>": false
+    }
 }
