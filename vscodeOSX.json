@@ -9,5 +9,14 @@
     },
     "[c]": {
         "editor.quickSuggestions": false
-    }
+    },
+    "latex-workshop.latex.outputDir": "out",
+    "latex-workshop.latex.clean.enabled": true,
+    "latex-workshop.chktex.enabled": true,
+    "latex-workshop.latex.toolchain": [
+        {
+            "command": "make",
+            "args": [ ]
+        }
+    ]
 }
