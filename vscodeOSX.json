@@ -1,15 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "editor.acceptSuggestionOnEnter": "off",
     "editor.renderWhitespace": "boundary",
     "editor.fontSize": 11,
+    "editor.lineNumbers": "relative",
     "editor.rulers": [80],
-    "vim.useSystemClipboard": true,
-    "[cpp]": {
-        "editor.quickSuggestions": false
-    },
-    "[c]": {
-        "editor.quickSuggestions": false
-    },
     "latex-workshop.latex.outputDir": "out",
     "latex-workshop.latex.clean.enabled": true,
     "latex-workshop.chktex.enabled": true,
@@ -18,5 +13,9 @@
             "command": "make",
             "args": [ ]
         }
-    ]
+    ],
+    "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
+    "terminal.integrated.fontSize": 11,
+    "vim.useSystemClipboard": true,
+    "vim.disableAnnoyingNeovimMessage": true
 }
