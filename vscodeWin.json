@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "editor.lineNumbers": "relative",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [80],
     "vim.useSystemClipboard": true,
