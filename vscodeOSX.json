@@ -1,21 +1,30 @@
 // Place your settings in this file to overwrite the default settings
 {
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.renderWhitespace": "boundary",
+    "editor.fontFamily": "Liberation Mono for Powerline",
     "editor.fontSize": 11,
     "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "boundary",
     "editor.rulers": [80],
-    "latex-workshop.latex.outputDir": "out",
-    "latex-workshop.latex.clean.enabled": true,
-    "latex-workshop.chktex.enabled": true,
-    "latex-workshop.latex.toolchain": [
-        {
-            "command": "make",
-            "args": [ ]
-        }
-    ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "files.associations": {
+        "*.stfu" : "json"
+    },
+    "gitlens.codeLens.recentChange.enabled": false,
+    "rust.mode": "rls",
+    "rust.rls": {
+        "useRustfmt": true
+    },
+    "rust.rustup": {
+        "toolchain": "nightly-x86_64-apple-darwin",
+        "nightlyToolchain": "nightly-x86_64-apple-darwin"
+    },
     "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
     "terminal.integrated.fontSize": 11,
-    "vim.useSystemClipboard": true,
-    "vim.disableAnnoyingNeovimMessage": true
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.useSystemClipboard": true
 }
