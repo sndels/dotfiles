@@ -114,6 +114,8 @@ kwmc rule owner="iTerm2" properties={role="AXDialog"}
 kwmc rule owner="Xcode" properties={role="AXDialog"}
 kwmc rule owner="Mathematica" properties={role="AXDialog"}
 kwmc rule owner="XQuartz" properties={role="AXDialog"}
+kwmc rule owner="Steam" properties={float="true"}
+kwmc rule owner="Calculator" properties={float="true"}
 
 /*
 The following commands create rules that
