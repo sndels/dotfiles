@@ -1,0 +1,23 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "editor.fontSize": 12,
+    "editor.lineNumbers": "relative",
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [80],
+    "editor.wordWrap": "bounded",
+    "extensions.ignoreRecommendations": false,
+    "files.associations": {
+        "*.stfu": "json"
+    },
+    "git.autorefresh": false,
+    "keyboard.dispatch": "keyCode",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.handleKeys": {
+        "<C-f>": false,
+        "<C-w>": false,
+        "<C-y>": false
+    },
+    "vim.useSystemClipboard": true
+}
+
