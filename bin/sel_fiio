@@ -1,0 +1,10 @@
+#!/bin/bash
+# /etc/pulse/default.pa should have
+# load-module module-stream-restore restore_device=false
+# so the last device used for a stream doesn't override the default on startup
+pacmd set-default-sink alsa_output.usb-FiiO_DigiHug_USB_Audio-01.analog-stereo
+
+# Set all streams to new sink
+pacmd list-sink-inputs | grep -e 'index' | while read -r line ; do
+    pacmd move-sink-input ${line: -1} alsa_output.usb-FiiO_DigiHug_USB_Audio-01.analog-stereo
+done
