@@ -20,11 +20,11 @@ chunkc core::hotload 1
 
 chunkc set global_desktop_mode           bsp
 
-chunkc set global_desktop_offset_top     28
-chunkc set global_desktop_offset_bottom   5
-chunkc set global_desktop_offset_left     5
-chunkc set global_desktop_offset_right    5
-chunkc set global_desktop_offset_gap      3
+chunkc set global_desktop_offset_top     25
+chunkc set global_desktop_offset_bottom   4
+chunkc set global_desktop_offset_left     4
+chunkc set global_desktop_offset_right    4
+chunkc set global_desktop_offset_gap      4
 
 chunkc set desktop_padding_step_size     10.0
 chunkc set desktop_gap_step_size         5.0
@@ -78,7 +78,6 @@ chunkc set focused_border_skip_floating  0
 
 chunkc core::load border.so
 chunkc core::load tiling.so
-chunkc core::load ffm.so
 
 #
 # NOTE: shell commands require escaped quotes

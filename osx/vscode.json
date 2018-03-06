@@ -2,29 +2,25 @@
 {
     "C_Cpp.intelliSenseEngine": "Default",
     "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "C_Cpp.formatting": "Disabled",
     "editor.acceptSuggestionOnEnter": "off",
     "editor.fontFamily": "Liberation Mono for Powerline",
-    "editor.fontSize": 11,
+    "editor.fontSize": 10,
+    "editor.formatOnSave": false,
     "editor.lineNumbers": "relative",
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
-    "editor.rulers": [80],
+    "editor.rulers": [
+        80
+    ],
     "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 100,
+    "editor.wordWrapColumn": 200,
     "files.associations": {
-        "*.stfu" : "json"
+        "*.stfu": "json"
     },
     "gitlens.codeLens.recentChange.enabled": false,
-    "rust.mode": "rls",
-    "rust.rls": {
-        "useRustfmt": true
-    },
-    "rust.rustup": {
-        "toolchain": "nightly-x86_64-apple-darwin",
-        "nightlyToolchain": "nightly-x86_64-apple-darwin"
-    },
+    "python.pythonPath": "python3",
     "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
-    "terminal.integrated.fontSize": 11,
-    "vim.disableAnnoyingNeovimMessage": true,
+    "terminal.integrated.fontSize": 10,
     "vim.useSystemClipboard": true
 }

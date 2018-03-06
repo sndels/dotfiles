@@ -49,16 +49,16 @@ cmd - k : chunkc tiling::window --focus next
 shift + alt - 0 : chunkc tiling::desktop --equalize
 
 # swap window
-shift + alt - h : chunkc tiling::window --swap west
-shift + alt - j : chunkc tiling::window --swap south
-shift + alt - k : chunkc tiling::window --swap north
-shift + alt - l : chunkc tiling::window --swap east
+shift + cmd - h : chunkc tiling::window --swap west
+shift + cmd - j : chunkc tiling::window --swap south
+shift + cmd - k : chunkc tiling::window --swap north
+shift + cmd - l : chunkc tiling::window --swap east
 
 # move window
-shift + cmd - h : chunkc tiling::window --warp west
-shift + cmd - j : chunkc tiling::window --warp south
-shift + cmd - k : chunkc tiling::window --warp north
-shift + cmd - l : chunkc tiling::window --warp east
+shift + alt - h : chunkc tiling::window --warp west
+shift + alt - j : chunkc tiling::window --warp south
+shift + alt - k : chunkc tiling::window --warp north
+shift + alt - l : chunkc tiling::window --warp east
 
 # move floating windows / windows on a floating space
 shift + alt - up     : chunkc tiling::window --warp-floating fullscreen
