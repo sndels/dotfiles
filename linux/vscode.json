@@ -1,18 +1,22 @@
 {
     "C_Cpp.intelliSenseEngineFallback": "Disabled",
-    "editor.fontSize": 12,
-    "editor.formatOnSave": true,
+    "editor.fontFamily": "Source Code Pro",
+    "editor.fontSize": 11,
     "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+    "editor.renderFinalNewline": false,
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         80
     ],
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
-    "extensions.ignoreRecommendations": false,
+    "editor.wordWrap": "on",
     "files.associations": {
+        "*.hu": "cpp",
+        "*.cu": "cpp",
         "*.stfu": "json"
     },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "git.autorefresh": false,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -25,21 +29,10 @@
         "suppressWelcomeNotice": true
     },
     "keyboard.dispatch": "keyCode",
-    "rust.mode": "rls",
-    "rust.rustup": {
-        "toolchain": "nightly-x86_64-unknown-linux-gnu",
-        "nightlyToolchain": "nightly-x86_64-unknown-linux-gnu"
-    },
-    "rust.rls": {
-        "useRustfmt": true
-    },
-    "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
-    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontSize": 11,
     "vim.handleKeys": {
         "<C-f>": false,
         "<C-w>": false,
         "<C-y>": false
-    },
-    "vim.useSystemClipboard": true,
-    "workbench.panel.location": "bottom"
+    }
 }

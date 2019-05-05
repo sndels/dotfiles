@@ -19,6 +19,8 @@ font pango:monospace 9
 for_window [class="^.*"] border pixel 3
 gaps inner 5
 
+focus_follows_mouse no
+
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up k
@@ -63,7 +65,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $mod+Shift+v split h
 
 # split in  orientation
 bindsym $mod+v split v
@@ -177,13 +179,15 @@ bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 
 
 # monitor setup
-exec --no-startup-id xrandr --output DVI-D-0 --auto --primary --pos 0x0 --output DP-0 --auto --rotate left --left-of DVI-D-0
-exec --no-startup-id compton --config ~/compton.conf
+exec --no-startup-id xrandr --output HDMI-0 --auto --primary --pos 0x0 --output DP-2 --auto --rotate left --left-of HDMI-0
+
+# 1337 transparent terminals and no tearing
+exec --no-startup-id compton
 
 # autostart programs
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 exec --no-startup-id i3-msg 'workspace 2; exec slack'
-exec --no-startup-id i3-msg 'workspace 2; exec telegram'
+exec --no-startup-id i3-msg 'workspace 2; exec telegram-desktop'
 
 # set background image, needs sleep for some reason^tm
 exec --no-startup-id "sh -c 'sleep 1; exec feh --bg-fill ~/bg.png'"

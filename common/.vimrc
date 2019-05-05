@@ -7,10 +7,6 @@ filetype plugin indent on
 " Enable syntax hilights
 syntax enable
 
-" Set colors
-set termguicolors
-colorscheme apprentice
-
 " Disable vi-compatibility
 set nocompatible
 
@@ -65,13 +61,3 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
-
-" Configure LanguageClient
-set signcolumn=yes
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
-autocmd BufWrite *.rs call LanguageClient_textDocument_formatting()
