@@ -13,7 +13,7 @@
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:monospace 9
+font pango:monospace 7
 
 # beautify
 for_window [class="^.*"] border pixel 3
