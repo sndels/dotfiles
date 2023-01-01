@@ -96,7 +96,6 @@ fi
 
 echo 'Get stuff from snap'
 echo ''
-sudo snap install chromium
 sudo snap install code
 sudo snap install --classic slack
 sudo snap install spotify
