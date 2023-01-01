@@ -177,20 +177,8 @@ bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
-
-# monitor setup
-exec --no-startup-id xrandr --output HDMI-0 --auto --primary --pos 0x0 --output DP-2 --auto --rotate left --left-of HDMI-0
-
-# 1337 transparent terminals and no tearing
-exec --no-startup-id compton
-
 # autostart programs
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 2; exec slack'
-exec --no-startup-id i3-msg 'workspace 2; exec telegram-desktop'
 
 # set background image, needs sleep for some reason^tm
 exec --no-startup-id "sh -c 'sleep 1; exec feh --bg-fill ~/bg.png'"
-
-# start redshift
-exec --no-startup-id redshift

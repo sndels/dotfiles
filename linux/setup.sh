@@ -1,11 +1,7 @@
 #!/bin/bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-echo 'Add PPAs'
-echo ''
-sudo add-apt-repository ppa:jonathonf/i3
-echo ''
-echo ''
+cd ~
 
 echo 'Get updates'
 echo ''
@@ -21,9 +17,26 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 echo ''
 echo ''
 
-echo 'Get i3-gaps and friends'
+echo 'Get i3 and friends'
 echo ''
-sudo apt install i3-gaps feh compton redshift
+echo "i3 4.22 (with gaps merge) wasn't out when making this script."
+echo 'Check if it is now released and available as a package,'
+echo 'or press any key to continue and install from source'
+read -n 1
+# TODO: Just grab i3 from apt once 4.22 is available instead of this mess
+mkdir -p ~/tmp
+cd ~/tmp
+git clone https://github.com/i3/i3.git
+cd i3
+git checkout ab6f1fd1601e58c2f5db113f6566cdf8e015c119
+sudo apt install meson ninja-build debhelper libx11-dev libxcb-util0-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-cursor-dev libxcb-xrm-dev libxcb-xkb-dev libxcb-shape0-dev libxkbcommon-dev libxkbcommon-x11-dev asciidoc xmlto docbook-xml pkg-config libev-dev libyajl-dev libpcre2-dev libstartup-notification0-dev libcairo2-dev libpango1.0-dev libpod-simple-perl
+mkdir -p build
+cd build
+meson ..
+ninja install
+cd ~
+
+sudo apt install i3status feh
 echo ''
 echo ''
 
