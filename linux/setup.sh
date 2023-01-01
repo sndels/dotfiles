@@ -117,6 +117,29 @@ sudo snap install telegram-desktop
 echo ''
 echo ''
 
+echo 'Setup vscode'
+echo ''
+mkdir -p ~/.config/Code/User
+cp $DIR/linux/vscode.json ~/.config/Code/User/settings.json
+code --install-extension joshneta.65816-assembly
+code --install-extension bungcip.better-toml
+code --install-extension ms-vscode.cpptools
+code --install-extension xaver.clang-format
+code --install-extension josetr.cmake-language-support-vscode
+code --install-extension vadimcn.vscode-lldb
+code --install-extension usernamehw.errorlens
+code --install-extension eamodio.gitlens
+code --install-extension ms-vscode.hexeditor
+code --install-extension ms-python.isort
+code --install-extension ms-python.python
+code --install-extension rust-lang.rust-analyzer
+code --install-extension slevesque.shader
+code --install-extension vscodevim.vim
+code --install-extension sndels.vulkan-api-docs
+echo ''
+echo ''
+
+
 echo 'Automagic setup done!'
 echo 'Now'
 echo '  put a cool image to ~/bg.png'
