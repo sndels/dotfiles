@@ -97,7 +97,7 @@ fi
 echo 'Get stuff from snap'
 echo ''
 sudo snap install code
-sudo snap install --classic slack
+sudo snap install slack
 sudo snap install spotify
 sudo snap install telegram-desktop
 echo ''
