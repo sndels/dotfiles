@@ -13,7 +13,7 @@ echo ''
 
 echo 'Get basic utils'
 echo ''
-sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip
+sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip kitty
 RUNZSH=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 echo ''
 echo ''
@@ -106,6 +106,5 @@ echo 'Automagic setup done!'
 echo 'Now'
 echo '  put a cool image to ~/bg.png'
 echo '  reboot to use i3'
-echo '  set a terminal font that supports the agnoster glyphs'
 echo '  get your'
 echo '    graphics driver? TODO: wget amd and install blob in the script'
