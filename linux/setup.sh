@@ -12,7 +12,7 @@ echo ''
 
 echo 'Get basic utils'
 echo ''
-sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-dev python3-pip
+sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 echo ''
 echo ''
