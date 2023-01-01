@@ -3,6 +3,9 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="agnoster"
 
+# Hide username@hostname
+export DEFAULT_USER=$USER
+
 plugins=(git)
 
 # User configuration
