@@ -177,6 +177,9 @@ bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer
 bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
 bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
+# darkmode
+exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
 # autostart programs
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal'
 
