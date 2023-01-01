@@ -1,38 +1,74 @@
 {
-    "C_Cpp.intelliSenseEngineFallback": "Disabled",
-    "editor.fontFamily": "Source Code Pro",
-    "editor.fontSize": 11,
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-    "editor.renderFinalNewline": false,
-    "editor.renderWhitespace": "boundary",
-    "editor.rulers": [
-        80
-    ],
-    "editor.wordWrap": "on",
-    "files.associations": {
-        "*.hu": "cpp",
-        "*.cu": "cpp",
-        "*.stfu": "json"
-    },
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "git.autorefresh": false,
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressUpdateNotice": false,
-        "suppressWelcomeNotice": true
-    },
-    "keyboard.dispatch": "keyCode",
-    "terminal.integrated.fontSize": 11,
-    "vim.handleKeys": {
-        "<C-f>": false,
-        "<C-w>": false,
-        "<C-y>": false
+  "C_Cpp.autoAddFileAssociations": false,
+  "C_Cpp.intelliSenseEngineFallback": "Disabled",
+  "clang-tidy.blacklist": [".*/ext/.*", ".*/VulkanSDK/.*"],
+  "clang-tidy.buildPath": "build-analysis",
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.console.wordWrap": false,
+  "debug.console.fontSize": 11,
+  "editor.renderFinalNewline": false,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 11,
+  "editor.fontWeight": "normal",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.semanticTokenColorCustomizations": {
+    "rules": {
+      "*.mutable": {
+        "underline": false
+      }
     }
+  },
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [80],
+  "editor.wordWrap": "on",
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.rgen": "glsl",
+    "*.rahit": "glsl",
+    "*.rchit": "glsl",
+    "*.rmiss": "glsl",
+    "*.rint": "glsl",
+    "*.rcall": "glsl"
+  },
+  "git.autorefresh": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false
+  },
+  "hexeditor.columnWidth": 16,
+  "hexeditor.showDecodedText": true,
+  "hexeditor.defaultEndianness": "little",
+  "hexeditor.inspectorType": "aside",
+  "python.formatting.provider": "black",
+  "rust-analyzer.inlayHints.enable": false,
+  "rust-analyzer.completion.addCallParenthesis": false,
+  "rust-analyzer.completion.autoimport.enable": false,
+  "rust-analyzer.completion.addCallArgumentSnippets": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.checkOnSave.extraArgs": [
+    "--target-dir", "target/rust-analyzer"
+  ],
+  "terminal.integrated.fontSize": 11,
+  "terminal.integrated.scrollback": 100000,
+  "vim.handleKeys": {
+    "<C-f>": false,
+    "<C-w>": false,
+    "<C-y>": false
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  }
 }

@@ -55,9 +55,8 @@ echo ''
 
 echo 'Get fonts'
 echo ''
-mkdir -p ~/.fonts/opentype
-git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git ~/.fonts/opentype/scp
-fc-cache -f -v
+sudo apt install fonts-firacode
+echo ''
 echo ''
 
 echo 'Copy dotfiles and scripts'
@@ -71,6 +70,7 @@ mkdir -p ~/bin
 cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
 rm nvimsetup.sh
+echo ''
 echo ''
 
 if [ ! -f ~/.ssh/id_rsa ]
