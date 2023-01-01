@@ -3,8 +3,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 echo 'Add PPAs'
 echo ''
-sudo add-apt-repository ppa:neovim-ppa/stable
-echo ''
 sudo add-apt-repository ppa:jonathonf/i3
 echo ''
 echo ''
@@ -38,8 +36,9 @@ echo ''
 echo 'Get and set up neovim'
 echo ''
 sudo apt install neovim
-sudo pip3 install pynvim
 $DIR/../common/nvimsetup.sh
+echo ''
+echo ''
 
 echo 'Get fonts'
 echo ''

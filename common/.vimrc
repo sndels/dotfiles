@@ -54,10 +54,3 @@ set list
 " Configure airline
 let g:airline_theme='minimalist'
 let g:airline_powerline_fonts=1
-
-" Configure NERDTree binds and autoclose if only it is active
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
