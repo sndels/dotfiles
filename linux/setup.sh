@@ -18,6 +18,12 @@ RUNZSH=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 echo ''
 echo ''
 
+echo 'Get Rust'
+echo ''
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo ''
+echo ''
+
 echo 'Get i3 and friends'
 echo ''
 echo "i3 4.22 (with gaps merge) wasn't out when making this script."
