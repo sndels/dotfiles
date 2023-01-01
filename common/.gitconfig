@@ -23,8 +23,8 @@
         sw = switch
         unstage = reset HEAD
         co = checkout
-	pu = push
-	puu = !git push -u origin `git symbolic-ref --short HEAD`
-	puf = push --force-with-lease
-	adup = add -up
-	adu = add -u
+        pu = push
+        puu = !git push -u origin `git symbolic-ref --short HEAD`
+        puf = push --force-with-lease
+        adup = add -up
+        adu = add -u
