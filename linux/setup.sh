@@ -46,6 +46,16 @@ sudo apt install libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev li
 echo ''
 echo ''
 
+echo 'VulkanSDK'
+echo ''
+# Copied for the specific version from https://vulkan.lunarg.com/sdk/home#linux
+wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo tee /etc/apt/trusted.gpg.d/lunarg.asc
+sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.3.236-jammy.list https://packages.lunarg.com/vulkan/1.3.236/lunarg-vulkan-1.3.236-jammy.list
+sudo apt update
+sudo apt install vulkan-sdk
+echo ''
+echo ''
+
 echo 'Get and set up neovim'
 echo ''
 sudo apt install neovim
