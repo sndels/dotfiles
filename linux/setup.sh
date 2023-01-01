@@ -13,8 +13,17 @@ echo ''
 
 echo 'Get basic utils'
 echo ''
-sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip kitty
+sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip
+echo ''
+echo ''
+
+echo 'Get kitty and setup terminal'
+echo ''
+sudo apt install kitty
 RUNZSH=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+echo ''
+echo 'Running default terminal selection, pick kitty'
+sudo update-alternatives --config x-terminal-emulator
 echo ''
 echo ''
 
