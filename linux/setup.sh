@@ -101,6 +101,12 @@ mkdir -p ~/bin
 cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
 rm nvimsetup.sh
+# Profile stuffs
+echo '' >> ~/.profile
+echo '# Custom settings' >> ~/.profile
+echo "setxkbmap -layout us,fi -option 'grp:lalt_lshift_toggle'" >> ~/.profile
+echo 'alias nvim=vim' >> ~/.profile
+echo "alias clangmake='CXX=clang++ CC=clang cmake'" >> ~/.profile
 echo ''
 echo ''
 
