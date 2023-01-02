@@ -57,7 +57,7 @@ meson ..
 ninja install
 cd ~/tmp
 
-sudo apt install i3status feh
+sudo apt install i3status feh dex
 echo ''
 echo ''
 
@@ -104,6 +104,7 @@ rm nvimsetup.sh
 # Profile stuffs
 echo '' >> ~/.profile
 echo '# Custom settings' >> ~/.profile
+echo "dex -ad # Run 'regular' autostart stuffs"
 echo "setxkbmap -layout us,fi -option 'grp:lalt_lshift_toggle'" >> ~/.profile
 echo 'alias nvim=vim' >> ~/.profile
 echo "alias clangmake='CXX=clang++ CC=clang cmake'" >> ~/.profile
