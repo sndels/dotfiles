@@ -4,6 +4,13 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 mkdir -p ~/tmp
 cd ~/tmp
 
+echo 'Setup package repositories'
+echo ''
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3_all.deb
+sudo dpkg -i protonvpn-stable-release_1.0.3_all.deb
+echo ''
+echo ''
+
 echo 'Get updates'
 echo ''
 sudo apt update
@@ -139,9 +146,22 @@ code --install-extension sndels.vulkan-api-docs
 echo ''
 echo ''
 
+echo 'Get and set up ProtonVPN'
+echo ''
+sudo apt install protonvpn-cli
+echo 'Give ProtonVPN username to login with'
+read pvpn_username
+protonvpn-cli login $pvpn_username
+protonvpn-cli netshield --ads-malware
+protonvpn-cli killswitch --on
+protonvpn-cli connect --sc
+echo ''
+echo ''
 
 echo 'Automagic setup done!'
 echo 'Now'
+echo '  verify the VPN setup'
+echo '    https://www.dnsleaktest.com/'
 echo '  put a cool image to ~/bg.png'
 echo '  reboot to use i3'
 echo '  get your'
