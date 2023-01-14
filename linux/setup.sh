@@ -18,6 +18,14 @@ sudo apt dist-upgrade
 echo ''
 echo ''
 
+echo 'Install AMD proprietary vulkan driver (RT support)'
+echo ''
+wget https://repo.radeon.com/amdgpu-install/5.4.1/ubuntu/jammy/amdgpu-install_5.4.50401-1_all.deb 
+sudo dpkg -i amdgpu-install_5.4.50401-1_all.deb
+sudo amdgpu-install -y --usecase=graphics --vulkan=pro --accept-eula
+echo ''
+echo ''
+
 echo 'Get basic utils'
 echo ''
 sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip
