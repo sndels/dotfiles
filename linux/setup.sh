@@ -14,7 +14,7 @@ echo ''
 echo 'Get updates'
 echo ''
 sudo apt update
-sudo apt dist-upgrade
+sudo apt dist-upgrade -y
 echo ''
 echo ''
 
@@ -28,13 +28,13 @@ echo ''
 
 echo 'Get basic utils'
 echo ''
-sudo apt install build-essential git cmake clang valgrind curl zsh htop python3-pip
+sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip
 echo ''
 echo ''
 
 echo 'Get kitty and setup terminal'
 echo ''
-sudo apt install kitty
+sudo apt install -y kitty
 RUNZSH=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 echo ''
 echo 'Running default terminal selection, pick kitty'
@@ -65,13 +65,13 @@ meson ..
 ninja install
 cd ~/tmp
 
-sudo apt install i3status feh dex
+sudo apt install -y i3status feh dex
 echo ''
 echo ''
 
 echo 'Get OpenGL and GLFW dependencies'
 echo ' '
-sudo apt install libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
+sudo apt install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
 echo ''
 echo ''
 
@@ -81,20 +81,20 @@ echo ''
 wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo tee /etc/apt/trusted.gpg.d/lunarg.asc
 sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.3.236-jammy.list https://packages.lunarg.com/vulkan/1.3.236/lunarg-vulkan-1.3.236-jammy.list
 sudo apt update
-sudo apt install vulkan-sdk
+sudo apt install -y vulkan-sdk
 echo ''
 echo ''
 
 echo 'Get and set up neovim'
 echo ''
-sudo apt install neovim
+sudo apt install -y neovim
 $DIR/../common/nvimsetup.sh
 echo ''
 echo ''
 
 echo 'Get fonts'
 echo ''
-sudo apt install fonts-firacode
+sudo apt install -y fonts-firacode
 echo ''
 echo ''
 
@@ -163,7 +163,7 @@ echo ''
 
 echo 'Get and set up ProtonVPN'
 echo ''
-sudo apt install protonvpn-cli
+sudo apt install -y protonvpn-cli
 echo 'Give ProtonVPN username to login with'
 read pvpn_username
 protonvpn-cli login $pvpn_username
