@@ -169,14 +169,13 @@ echo ''
 
 echo 'Get ProtonVPN'
 echo ''
-sudo apt install -y protonvpn-cli
+sudo apt install -y protonvpn
 echo ''
 echo ''
 
 echo 'Automagic setup done!'
 echo 'Now'
-echo '  Init and verify the VPN setup'
-echo '    init_proton.sh'
+echo '  Connect proton and verify the VPN setup'
 echo '    https://www.dnsleaktest.com/'
 echo '  put a cool image to ~/bg.png'
 echo '  reboot to use i3'
