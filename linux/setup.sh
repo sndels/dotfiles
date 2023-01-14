@@ -100,7 +100,7 @@ echo ''
 
 echo 'Get fonts'
 echo ''
-sudo apt install -y fonts-firacode
+sudo apt install -y fonts-firacode fonts-font-awesome
 echo ''
 echo ''
 
