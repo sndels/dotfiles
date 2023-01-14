@@ -50,7 +50,7 @@ echo ''
 
 echo 'Get sway and friends'
 echo ''
-sudo apt install -y sway dmenu brightnessctl
+sudo apt install -y sway dmenu brightnessctl swaylock
 
 git clone https://github.com/greshake/i3status-rust
 cd i3status-rust
