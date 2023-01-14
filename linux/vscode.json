@@ -9,7 +9,7 @@
   "editor.renderFinalNewline": false,
   "editor.formatOnSave": true,
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 11,
+  "editor.fontSize": 13,
   "editor.fontWeight": "normal",
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
