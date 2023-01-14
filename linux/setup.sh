@@ -134,7 +134,7 @@ echo ''
 echo 'Setup vscode'
 echo ''
 mkdir -p ~/.config/Code/User
-cp $DIR/linux/vscode.json ~/.config/Code/User/settings.json
+cp $DIR/vscode.json ~/.config/Code/User/settings.json
 code --install-extension joshneta.65816-assembly
 code --install-extension bungcip.better-toml
 code --install-extension ms-vscode.cpptools
