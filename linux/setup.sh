@@ -75,6 +75,12 @@ sudo apt install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev
 echo ''
 echo ''
 
+echo 'Get Rust windowing dependencies'
+echo ' '
+sudo apt install -y librust-atk-dev libgtk-3-dev
+echo ''
+echo ''
+
 echo 'VulkanSDK'
 echo ''
 # Copied for the specific version from https://vulkan.lunarg.com/sdk/home#linux
