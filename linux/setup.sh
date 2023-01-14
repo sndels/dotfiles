@@ -129,9 +129,9 @@ if [ ! -f ~/.ssh/id_rsa ]
 then
     echo 'Generate ssh key and setup agent'
     echo ''
-    ssh-keygen -t rsa -b 4096 -C "santeri.salmijarvi@iki.fi"
+    ssh-keygen -t ed25519 -C "santeri.salmijarvi@iki.fi"
     echo 'AddKeysToAgent yes' > ~/.ssh/config
-    cat ~/.ssh/id_rsa.pub
+    cat ~/.ssh/id_ed25519.pub
     echo ''
     echo ''
 fi
