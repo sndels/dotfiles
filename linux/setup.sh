@@ -161,21 +161,16 @@ code --install-extension sndels.vulkan-api-docs
 echo ''
 echo ''
 
-echo 'Get and set up ProtonVPN'
+echo 'Get ProtonVPN'
 echo ''
 sudo apt install -y protonvpn-cli
-echo 'Give ProtonVPN username to login with'
-read pvpn_username
-protonvpn-cli login $pvpn_username
-protonvpn-cli netshield --ads-malware
-protonvpn-cli killswitch --on
-protonvpn-cli connect --sc
 echo ''
 echo ''
 
 echo 'Automagic setup done!'
 echo 'Now'
-echo '  verify the VPN setup'
+echo '  Init and verify the VPN setup'
+echo '    init_proton.sh'
 echo '    https://www.dnsleaktest.com/'
 echo '  put a cool image to ~/bg.png'
 echo '  reboot to use i3'
