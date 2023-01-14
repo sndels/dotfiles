@@ -48,24 +48,16 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo ''
 echo ''
 
-echo 'Get i3 and friends'
+echo 'Get sway and friends'
 echo ''
-echo "i3 4.22 (with gaps merge) wasn't out when making this script."
-echo 'Check if it is now released and available as a package,'
-echo 'or press any key to continue and install from source'
-read -n 1
-# TODO: Just grab i3 from apt once 4.22 is available instead of this mess
-git clone https://github.com/i3/i3.git
-cd i3
-git checkout ab6f1fd1601e58c2f5db113f6566cdf8e015c119
-sudo apt install meson ninja-build debhelper libx11-dev libxcb-util0-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-cursor-dev libxcb-xrm-dev libxcb-xkb-dev libxcb-shape0-dev libxkbcommon-dev libxkbcommon-x11-dev asciidoc xmlto docbook-xml pkg-config libev-dev libyajl-dev libpcre2-dev libstartup-notification0-dev libcairo2-dev libpango1.0-dev libpod-simple-perl
-mkdir -p build
-cd build
-meson ..
-ninja install
-cd ~/tmp
+sudo apt install -y sway dmenu brightnessctl
 
-sudo apt install -y i3status feh dex
+git clone https://github.com/greshake/i3status-rust
+cd i3status-rust
+git checkout v0.22.0
+sudo apt install -y libssl-dev libsensors-dev libpulse-dev
+cargo install --path . --locked
+./install.sh
 echo ''
 echo ''
 
@@ -107,23 +99,12 @@ echo ''
 echo 'Copy dotfiles and scripts'
 echo ''
 cp $DIR/.zshrc ~/.zshrc
-mkdir -p ~/.i3
-cp -r $DIR/.i3/. ~/.i3
 mkdir -p ~/.config
 cp -r $DIR/.config/. ~/.config
 mkdir -p ~/bin
 cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
 rm nvimsetup.sh
-# Profile stuffs
-echo '' >> ~/.profile
-echo '# Custom settings' >> ~/.profile
-echo "dex -ad # Run 'regular' autostart stuffs"
-echo "setxkbmap -layout us,fi -option 'grp:lalt_lshift_toggle'" >> ~/.profile
-echo 'alias nvim=vim' >> ~/.profile
-echo "alias clangmake='CXX=clang++ CC=clang cmake'" >> ~/.profile
-echo ''
-echo ''
 
 if [ ! -f ~/.ssh/id_rsa ]
 then

@@ -1,0 +1,63 @@
+theme = "slick"
+icons = "awesome"
+
+[[block]]
+block = "focused_window"
+max_width = 100
+show_marks = "visible"
+
+[[block]]
+block = "apt"
+interval = 99999
+format = "{count:1} updates available"
+format_singular = "{count:1} update available"
+format_up_to_date = ""
+critical_updates_regex = "(linux|linux-lts|linux-zen)"
+# shows dmenu with cached available updates. Any dmenu alternative should also work.
+on_click = "APT_CONFIG=/tmp/i3rs-apt/apt.conf apt list --upgradable | tail -n +2 | rofi -dmenu"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "backlight"
+cycle = []
+
+[[block]]
+block = "custom"
+command = "[ -d /proc/sys/net/ipv4/conf/proton0 ] && echo \uf023 || echo \uf09c"
+interval = 10
+
+[[block]]
+block = "net"
+device = "wlp1s0"
+format = "{ssid} {signal_strength} {speed_down;K*b} {speed_up;K*b}"
+interval = 5
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "memory"
+interval = 1
+display_type = "memory"
+format_mem = "{mem_used_percents}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "time"
+interval = 5
+format = "%a %d/%m %R"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+if_command = "test -e /sys/class/power_supply/BAT0"
+

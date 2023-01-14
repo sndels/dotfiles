@@ -1,7 +1,10 @@
 {
   "C_Cpp.autoAddFileAssociations": false,
   "C_Cpp.intelliSenseEngineFallback": "Disabled",
-  "clang-tidy.blacklist": [".*/ext/.*", ".*/VulkanSDK/.*"],
+  "clang-tidy.blacklist": [
+    ".*/ext/.*",
+    ".*/VulkanSDK/.*"
+  ],
   "clang-tidy.buildPath": "build-analysis",
   "debug.allowBreakpointsEverywhere": true,
   "debug.console.wordWrap": false,
@@ -9,7 +12,6 @@
   "editor.renderFinalNewline": false,
   "editor.formatOnSave": true,
   "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 13,
   "editor.fontWeight": "normal",
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
@@ -21,7 +23,9 @@
     }
   },
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.wordWrap": "on",
   "extensions.ignoreRecommendations": true,
   "files.associations": {
@@ -56,7 +60,8 @@
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
   "rust-analyzer.checkOnSave.extraArgs": [
-    "--target-dir", "target/rust-analyzer"
+    "--target-dir",
+    "target/rust-analyzer"
   ],
   "terminal.integrated.fontSize": 11,
   "terminal.integrated.scrollback": 100000,
@@ -70,5 +75,7 @@
   },
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
-  }
+  },
+  "editor.fontSize": 13,
+  "keyboard.dispatch": "keyCode"
 }

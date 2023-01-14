@@ -8,4 +8,7 @@ export DEFAULT_USER=$USER
 
 plugins=(git)
 
+alias nvim=vim
+alias ccmake='CXX=clang++ CC=clang cmake'
+
 source $ZSH/oh-my-zsh.sh
