@@ -1,0 +1,3 @@
+#!/bin/sh
+
+grimshot save area ~/screenshot.png

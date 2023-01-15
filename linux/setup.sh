@@ -54,7 +54,7 @@ echo ''
 
 echo 'Get sway and friends'
 echo ''
-sudo apt install -y sway dmenu brightnessctl swaylock
+sudo apt install -y sway dmenu brightnessctl swaylock grimshot
 
 echo 'Add user to video-group for brightnessctl'
 sudo gpasswd -a $USER video
