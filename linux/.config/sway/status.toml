@@ -1,5 +1,7 @@
-theme = "slick"
 icons = "awesome"
+
+[theme]
+file = "/home/sndels/.config/sway/slick-sndels.toml"
 
 [[block]]
 block = "focused_window"
