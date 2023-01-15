@@ -31,6 +31,7 @@ echo ''
 sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip
 echo ''
 echo 'Install libstdc++-12-dev as a workaround for broken clang'
+# TODO: What breaks things? Something before or after this?
 sudo apt install -y libstdc++-12-dev
 echo ''
 echo ''
