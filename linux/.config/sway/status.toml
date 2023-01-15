@@ -4,11 +4,6 @@ icons = "awesome"
 file = "/home/sndels/.config/sway/slick-sndels.toml"
 
 [[block]]
-block = "focused_window"
-max_width = 100
-show_marks = "visible"
-
-[[block]]
 block = "apt"
 interval = 99999
 format = "{count:1} updates available"
