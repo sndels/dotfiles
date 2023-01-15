@@ -159,6 +159,7 @@ echo 'Automagic setup done!'
 echo 'Now'
 echo '  Connect proton and verify the VPN setup'
 echo '    https://www.dnsleaktest.com/'
+echo '  Add the Finnish keyboard layout'
 echo '  put a cool image to ~/.config/sway/bg.png'
 echo '  set up the BT headset'
 echo "    pair once through gnome's BT ui"
