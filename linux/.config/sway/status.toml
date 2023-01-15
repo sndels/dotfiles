@@ -13,6 +13,11 @@ critical_updates_regex = "(linux|linux-lts|linux-zen)"
 # shows dmenu with cached available updates. Any dmenu alternative should also work.
 on_click = "APT_CONFIG=/tmp/i3rs-apt/apt.conf apt list --upgradable | tail -n +2 | rofi -dmenu"
 
+[[block]]
+block = "custom"
+interval = 10
+hide_when_empty = true
+command = "python3 ~/.config/sway/spotify_status.py"
 
 [[block]]
 block = "custom"
