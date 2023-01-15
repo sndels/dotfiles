@@ -30,6 +30,9 @@ echo 'Get basic utils'
 echo ''
 sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip
 echo ''
+echo 'Install libstdc++-12-dev as a workaround for broken clang'
+sudo apt install -y libstdc++-12-dev
+echo ''
 echo ''
 
 echo 'Get kitty and setup terminal'
