@@ -106,17 +106,6 @@ cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
 rm nvimsetup.sh
 
-if [ ! -f ~/.ssh/id_rsa ]
-then
-    echo 'Generate ssh key and setup agent'
-    echo ''
-    ssh-keygen -t ed25519 -C "santeri.salmijarvi@iki.fi"
-    echo 'AddKeysToAgent yes' > ~/.ssh/config
-    cat ~/.ssh/id_ed25519.pub
-    echo ''
-    echo ''
-fi
-
 echo 'Get stuff from snap'
 echo ''
 sudo snap install --classic code
@@ -153,6 +142,18 @@ echo ''
 sudo apt install -y protonvpn
 echo ''
 echo ''
+
+
+if [ ! -f ~/.ssh/id_ed25519 ]
+then
+    echo 'Generate ssh key and setup agent'
+    echo ''
+    ssh-keygen -t ed25519 -C "santeri.salmijarvi@iki.fi"
+    echo 'AddKeysToAgent yes' > ~/.ssh/config
+    cat ~/.ssh/id_ed25519.pub
+    echo ''
+    echo ''
+fi
 
 echo 'Automagic setup done!'
 echo 'Now'
