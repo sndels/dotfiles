@@ -236,6 +236,9 @@ bar {
     }
 }
 
+# Setup lock on lid close
+bindswitch lid:on exec ~/bin/lock
+
 # Hide title bars
 default_border pixel
 
