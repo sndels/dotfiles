@@ -64,6 +64,7 @@ git checkout v0.22.0
 sudo apt install -y libssl-dev libsensors-dev libpulse-dev
 cargo install --path . --locked
 ./install.sh
+cd ~/tmp
 echo ''
 echo ''
 
