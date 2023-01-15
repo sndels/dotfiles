@@ -159,4 +159,7 @@ echo 'Now'
 echo '  Connect proton and verify the VPN setup'
 echo '    https://www.dnsleaktest.com/'
 echo '  put a cool image to ~/.config/sway/bg.png'
+echo '  set up the BT headset'
+echo "    pair once through gnome's BT ui"
+echo '    put the id into ~/.config/fiio_id'
 echo '  reboot to use sway'

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+id=`cat ~/.config/fiio_id`
+bluetoothctl connect $id
