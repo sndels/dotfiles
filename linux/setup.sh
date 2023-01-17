@@ -28,7 +28,7 @@ echo ''
 
 echo 'Get basic utils'
 echo ''
-sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip clang-format black
+sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip clang-format black ninja
 echo ''
 echo 'Install libstdc++-12-dev as a workaround for broken clang'
 # TODO: What breaks things? Something before or after this?
