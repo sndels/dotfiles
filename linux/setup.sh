@@ -4,21 +4,21 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 mkdir -p ~/tmp
 cd ~/tmp
 
-echo 'Setup package repositories'
+echo '======================= Setup package repositories ======================='
 echo ''
 wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3_all.deb
 sudo dpkg -i protonvpn-stable-release_1.0.3_all.deb
 echo ''
 echo ''
 
-echo 'Get updates'
+echo '============================== Get updates ==============================='
 echo ''
 sudo apt update
 sudo apt dist-upgrade -y
 echo ''
 echo ''
 
-echo 'Install AMD proprietary vulkan driver (RT support)'
+echo '=========== Install AMD proprietary vulkan driver (RT support) ==========='
 echo ''
 wget https://repo.radeon.com/amdgpu-install/5.4.1/ubuntu/jammy/amdgpu-install_5.4.50401-1_all.deb 
 sudo dpkg -i amdgpu-install_5.4.50401-1_all.deb
@@ -26,7 +26,7 @@ sudo amdgpu-install -y --usecase=graphics --vulkan=pro --accept-eula
 echo ''
 echo ''
 
-echo 'Get basic utils'
+echo '============================= Get basic utils ============================'
 echo ''
 sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip clang-format black ninja
 echo ''
@@ -36,7 +36,7 @@ sudo apt install -y libstdc++-12-dev
 echo ''
 echo ''
 
-echo 'Get kitty and setup terminal'
+echo '====================== Get kitty and setup terminal ======================'
 echo ''
 sudo apt install -y kitty
 RUNZSH=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -46,20 +46,20 @@ sudo update-alternatives --config x-terminal-emulator
 echo ''
 echo ''
 
-echo 'Get Rust'
+echo '================================ Get Rust ================================'
 echo ''
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo ''
 echo ''
 
-echo 'Get sway and friends'
+echo '========================== Get sway and friends =========================='
 echo ''
 sudo apt install -y sway dmenu brightnessctl swaylock grimshot
 
-echo 'Add user to video-group for brightnessctl'
+echo '=============== Add user to video-group for brightnessctl ================'
 sudo gpasswd -a $USER video
 
-echo 'Install i3status-rs from source'
+echo '==================== Install i3status-rs from source ====================='
 echo ''
 git clone https://github.com/greshake/i3status-rust
 cd i3status-rust
@@ -71,19 +71,19 @@ cd ~/tmp
 echo ''
 echo ''
 
-echo 'Get OpenGL and GLFW dependencies'
+echo '==================== Get OpenGL and GLFW dependencies ===================='
 echo ' '
 sudo apt install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
 echo ''
 echo ''
 
-echo 'Get Rust windowing dependencies'
+echo '===================== Get Rust windowing dependencies ===================='
 echo ' '
 sudo apt install -y librust-atk-dev libgtk-3-dev
 echo ''
 echo ''
 
-echo 'VulkanSDK'
+echo '=============================== VulkanSDK ================================'
 echo ''
 # Copied for the specific version from https://vulkan.lunarg.com/sdk/home#linux
 wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo tee /etc/apt/trusted.gpg.d/lunarg.asc
@@ -93,20 +93,20 @@ sudo apt install -y vulkan-sdk
 echo ''
 echo ''
 
-echo 'Get and set up neovim'
+echo '========================== Get and set up neovim ========================='
 echo ''
 sudo apt install -y neovim
 $DIR/../common/nvimsetup.sh
 echo ''
 echo ''
 
-echo 'Get fonts'
+echo '=============================== Get fonts ================================'
 echo ''
 sudo apt install -y fonts-firacode fonts-font-awesome
 echo ''
 echo ''
 
-echo 'Copy dotfiles and scripts'
+echo '======================== Copy dotfiles and scripts ======================='
 echo ''
 cp $DIR/.zshrc ~/.zshrc
 mkdir -p ~/.config
@@ -116,7 +116,7 @@ cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
 rm nvimsetup.sh
 
-echo 'Get stuff from snap'
+echo '=========================== Get stuff from snap =========================='
 echo ''
 sudo snap install --classic code
 sudo snap install slack
@@ -125,7 +125,7 @@ sudo snap install telegram-desktop
 echo ''
 echo ''
 
-echo 'Setup vscode'
+echo '============================== Setup vscode =============================='
 echo ''
 mkdir -p ~/.config/Code/User
 cp $DIR/vscode.json ~/.config/Code/User/settings.json
@@ -147,7 +147,7 @@ code --install-extension sndels.vulkan-api-docs
 echo ''
 echo ''
 
-echo 'Get ProtonVPN'
+echo '============================== Get ProtonVPN ============================='
 echo ''
 sudo apt install -y protonvpn
 echo ''
@@ -156,7 +156,7 @@ echo ''
 
 if [ ! -f ~/.ssh/id_ed25519 ]
 then
-    echo 'Generate ssh key and setup agent'
+    echo '==================== Generate ssh key and setup agent ===================='
     echo ''
     ssh-keygen -t ed25519 -C "santeri.salmijarvi@iki.fi"
     echo 'AddKeysToAgent yes' > ~/.ssh/config
