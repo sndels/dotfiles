@@ -61,9 +61,9 @@ sudo gpasswd -a $USER video
 
 echo '==================== Install i3status-rs from source ====================='
 echo ''
-git clone https://github.com/greshake/i3status-rust
+git clone https://github.com/sndels/i3status-rust
 cd i3status-rust
-git checkout v0.22.0
+git checkout v0.22.0-ignore-phased
 sudo apt install -y libssl-dev libsensors-dev libpulse-dev
 cargo install --path . --locked
 ./install.sh
