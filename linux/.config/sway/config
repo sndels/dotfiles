@@ -83,7 +83,8 @@ input "2:10:TPPS/2_Elan_TrackPoint" {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    # Match shortcut for spotlight
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -179,7 +180,8 @@ input "2:10:TPPS/2_Elan_TrackPoint" {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # SSNOTE: Bind used for dmenu to match spotlight bind
+    bindsym $mod+d focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
