@@ -251,4 +251,7 @@ exec protonvpn-cli disconnect
 exec nm-applet
 exec gnome-keyring-daemon --start
 
+# Dark mode
+exec gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
 include /etc/sway/config.d/*
