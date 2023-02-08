@@ -66,6 +66,14 @@ interval = 5
 format = "%a %d/%m %R"
 
 [[block]]
+block = "keyboard_layout"
+driver = "sway"
+format = "\uf11c {layout}"
+[block.mappings]
+"English (US)" = "US"
+"Finnish (N/A)" = "FI"
+
+[[block]]
 block = "battery"
 interval = 10
 format = "{percentage} {time}"
