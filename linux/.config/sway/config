@@ -240,6 +240,9 @@ bar {
     }
 }
 
+# Set up floating for some apps/windows
+for_window [title="UnityEditor.(.*)"] floating enable
+
 # Setup lock on lid close
 bindswitch lid:on exec ~/bin/lock
 
