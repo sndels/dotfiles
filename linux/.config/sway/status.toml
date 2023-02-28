@@ -1,18 +1,19 @@
-icons = "awesome"
+icons_format = "{icon}"
 
 [theme]
-file = "/home/sndels/.config/sway/slick-sndels.toml"
+theme = "/home/sndels/.config/sway/slick-sndels.toml"
+
+[icons]
+icons = "awesome4"
 
 [[block]]
 block = "apt"
 interval = 99999
-format = "{count:1} updates available"
-format_singular = "{count:1} update available"
-format_up_to_date = ""
+format = " $icon $count updates available "
+format_singular = " $icon $count update available "
+format_up_to_date = " $icon "
 critical_updates_regex = "(linux|linux-lts|linux-zen)"
 ignore_phased_updates = true
-# shows dmenu with cached available updates. Any dmenu alternative should also work.
-on_click = "APT_CONFIG=/tmp/i3rs-apt/apt.conf apt list --upgradable | tail -n +2 | rofi -dmenu"
 
 [[block]]
 block = "custom"
@@ -35,13 +36,13 @@ cycle = []
 
 [[block]]
 block = "custom"
-command = "[ -d /proc/sys/net/ipv4/conf/proton0 ] && echo \uf023 || echo \uf09c"
+command = "[ -d /proc/sys/net/ipv4/conf/proton0 ] && echo '  \uf023 ' || echo '  \uf09c '"
 interval = 10
 
 [[block]]
 block = "net"
 device = "wlp1s0"
-format = "{ssid} {signal_strength} {speed_down;K*b} {speed_up;K*b}"
+format = "  $icon $ssid $signal_strength ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) "
 interval = 5
 
 [[block]]
@@ -51,24 +52,22 @@ interval = 1
 [[block]]
 block = "load"
 interval = 1
-format = "{1m}"
+format = "  $icon $1m "
 
 [[block]]
 block = "memory"
 interval = 1
-display_type = "memory"
-format_mem = "{mem_used_percents}"
-format_swap = "{swap_used_percents}"
+format = "  $icon $mem_total_used_percents.eng(w:2) "
 
 [[block]]
 block = "time"
 interval = 5
-format = "%a %d/%m %R"
+format = "  $icon $timestamp.datetime(f:'%a %d/%m %R') "
 
 [[block]]
 block = "keyboard_layout"
 driver = "sway"
-format = "\uf11c {layout}"
+format = "  \uf11c $layout "
 [block.mappings]
 "English (US)" = "US"
 "Finnish (N/A)" = "FI"
@@ -76,6 +75,6 @@ format = "\uf11c {layout}"
 [[block]]
 block = "battery"
 interval = 10
-format = "{percentage} {time}"
+format = "  $icon $percentage $time "
 if_command = "test -e /sys/class/power_supply/BAT0"
 
