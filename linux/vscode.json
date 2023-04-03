@@ -1,6 +1,6 @@
 {
   "C_Cpp.autoAddFileAssociations": false,
-  "C_Cpp.intelliSenseEngineFallback": "Disabled",
+  "C_Cpp.intelliSenseEngineFallback": "disabled",
   "clang-tidy.blacklist": [
     ".*/ext/.*",
     ".*/VulkanSDK/.*"
@@ -8,9 +8,8 @@
   "clang-tidy.buildPath": "build-analysis",
   "debug.allowBreakpointsEverywhere": true,
   "debug.console.wordWrap": false,
-  "debug.console.fontSize": 11,
-  "editor.renderFinalNewline": false,
-  "editor.formatOnSave": true,
+  "debug.console.fontSize": 12,
+  "editor.renderFinalNewline": "off",
   "editor.fontFamily": "Fira Code",
   "editor.fontWeight": "normal",
   "editor.lineNumbers": "relative",
@@ -65,6 +64,7 @@
   ],
   "terminal.integrated.fontSize": 11,
   "terminal.integrated.scrollback": 100000,
+  // Override terminal to make gdb debugger work
   "vim.handleKeys": {
     "<C-f>": false,
     "<C-w>": false,
@@ -76,6 +76,18 @@
   "[c]": {
     "editor.defaultFormatter": "xaver.clang-format"
   },
-  "editor.fontSize": 13,
-  "keyboard.dispatch": "keyCode"
+  "editor.fontSize": 11,
+  "keyboard.dispatch": "keyCode",
+  "omnisharp.useModernNet": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "debug.disassemblyView.showSourceCode": false,
+  "clang-format.executable": "clang-format-15",
+  "files.insertFinalNewline": true,
+  "debug.onTaskErrors": "abort",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "window.zoomLevel": 1,
+  "editor.formatOnSave": true
 }
