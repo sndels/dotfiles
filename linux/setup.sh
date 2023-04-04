@@ -28,7 +28,7 @@ echo ''
 
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip clang-format black ninja
+sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip clang-format black ninja-build
 echo ''
 echo 'Install libstdc++-12-dev as a workaround for broken clang'
 # Seems like some 22.04 update and/or installing gcc-12 through some package dependency breaks things
