@@ -32,7 +32,7 @@ block = "sound"
 
 [[block]]
 block = "backlight"
-cycle = []
+invert_icons = true
 
 [[block]]
 block = "custom"
