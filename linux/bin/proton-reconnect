@@ -1,3 +1,4 @@
 #!/bin/sh
 
-protonvpn-cli disconnect || protonvpn-cli connect --sc
+protonvpn-cli disconnect
+protonvpn-cli connect --sc
