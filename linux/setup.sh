@@ -20,8 +20,9 @@ echo ''
 
 echo '=========== Install AMD proprietary vulkan driver (RT support) ==========='
 echo ''
-wget https://repo.radeon.com/amdgpu-install/23.30.3/ubuntu/jammy/amdgpu-install_5.7.50703-1_all.deb
-sudo dpkg -i amdgpu-install_5.7.50703-1_all.deb
+wget http://repo.radeon.com/amdgpu-install/23.40.1/ubuntu/jammy/amdgpu-install_6.0.60001-1_all.deb
+sudo dpkg -i amdgpu-install_6.0.60001-1_all.deb
+sudo apt update
 sudo amdgpu-install -y --usecase=graphics --vulkan=pro --accept-eula
 echo ''
 echo ''
