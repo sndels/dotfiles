@@ -104,6 +104,11 @@ echo ''
 echo '=============================== Get fonts ================================'
 echo ''
 sudo apt install -y fonts-firacode fonts-font-awesome
+wget https://github.com/intel/intel-one-mono/releases/download/V1.3.0/ttf.zip
+unzip ttf.zip
+sudo mv ttf /usr/share/fonts/truetype/IntelOneMono
+sudo fc-cache -f
+rm ttf.zip
 echo ''
 echo ''
 
