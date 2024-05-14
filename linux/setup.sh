@@ -121,6 +121,9 @@ mkdir -p ~/bin
 cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
 rm nvimsetup.sh
+wget https://github.com/Wilfred/difftastic/releases/download/0.58.0/difft-x86_64-unknown-linux-gnu.tar.gz
+tar xf difft-x86_64-unknown-linux-gnu.tar.gz
+mv difft ~/bin
 
 echo '=========================== Get stuff from snap =========================='
 echo ''

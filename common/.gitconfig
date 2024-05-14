@@ -10,6 +10,7 @@
 [alias]
         st = status
         df = diff
+        dft = difftool
         dfw = diff -w
         dfc = diff --color-words
         dfwc = diff -w --color-words
@@ -28,3 +29,11 @@
         puf = push --force-with-lease
         adup = add -up
         adu = add -u
+[diff]
+        tool = difftastic
+[difftool]
+        prompt = false
+[difftool "difftastic"]
+        cmd = difft --display inline "$LOCAL" "$REMOTE"
+[pager]
+        difftool = true
