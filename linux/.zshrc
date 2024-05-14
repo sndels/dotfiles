@@ -8,7 +8,7 @@ export DEFAULT_USER=$USER
 
 plugins=(git)
 
-alias nvim=vim
+alias vim=nvim
 alias ccmake='CXX=clang++ CC=clang cmake'
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then

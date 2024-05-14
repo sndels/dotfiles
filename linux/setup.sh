@@ -29,7 +29,7 @@ echo ''
 
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip clang-format black ninja-build
+sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip python3-venv clang-format black ninja-build ripgrep
 echo ''
 echo 'Install libstdc++-12-dev as a workaround for broken clang'
 # Seems like some 22.04 update and/or installing gcc-12 through some package dependency breaks things
@@ -96,7 +96,7 @@ echo ''
 
 echo '========================== Get and set up neovim ========================='
 echo ''
-sudo apt install -y neovim
+sudo snap install nvim --classic
 $DIR/../common/nvimsetup.sh
 echo ''
 echo ''

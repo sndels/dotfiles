@@ -10,10 +10,10 @@ source ~/.vimrc
 
 mkdir -p ~/.vim
 
-echo 'Installing pathogen'
+echo 'Installing plug'
 echo ''
 mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+curl -LSso ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ' '
 
 echo 'Installing the theme'
