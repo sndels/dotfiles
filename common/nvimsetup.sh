@@ -10,11 +10,22 @@ source ~/.vimrc
 
 mkdir -p ~/.vim
 
+echo 'Installing pathogen'
+echo ''
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+echo ''
+
 echo 'Installing plug'
 echo ''
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ' '
+
+echo 'Installing lspconfig'
+echo ''
+git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig
+echo ''
 
 echo 'Installing the theme'
 echo ''
