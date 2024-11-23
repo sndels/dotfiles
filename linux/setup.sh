@@ -6,8 +6,8 @@ cd ~/tmp
 
 echo '======================= Setup package repositories ======================='
 echo ''
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.3_all.deb
-sudo dpkg -i protonvpn-stable-release_1.0.3_all.deb
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.6_all.deb
+sudo dpkg -i protonvpn-stable-release_1.0.6_all.deb
 echo ''
 echo ''
 
@@ -20,8 +20,7 @@ echo ''
 
 echo '=========== Install AMD proprietary vulkan driver (RT support) ==========='
 echo ''
-wget http://repo.radeon.com/amdgpu-install/23.40.1/ubuntu/jammy/amdgpu-install_6.0.60001-1_all.deb
-sudo dpkg -i amdgpu-install_6.0.60001-1_all.deb
+wget http://repo.radeon.com/amdgpu-install/6.2.4/ubuntu/noble/amdgpu-install_6.2.60204-1_all.deb
 sudo apt update
 sudo amdgpu-install -y --usecase=graphics --vulkan=pro --accept-eula
 echo ''
@@ -29,13 +28,13 @@ echo ''
 
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang valgrind curl zsh htop python3-pip python3-venv clang-format black ninja-build ripgrep mold
+sudo apt install -y build-essential git cmake clang-18 clangd-18 clang-tidy-18 clang-format-18 valgrind curl zsh htop python3-pip python3-venv black ninja-build ripgrep mold pulseaudio
 echo ''
-echo 'Install libstdc++-12-dev as a workaround for broken clang'
+#echo 'Install libstdc++-12-dev as a workaround for broken clang'
 # Seems like some 22.04 update and/or installing gcc-12 through some package dependency breaks things
-sudo apt install -y libstdc++-12-dev
-echo ''
-echo ''
+# sudo apt install -y libstdc++-12-dev
+#echo ''
+#echo ''
 
 echo '====================== Get kitty and setup terminal ======================'
 echo ''
@@ -65,7 +64,7 @@ echo ''
 git clone https://github.com/greshake/i3status-rust.git
 cd i3status-rust
 git checkout v0.30.4
-sudo apt install -y libssl-dev libsensors-dev libpulse-dev
+sudo apt install -y libssl-dev libsensors-dev libpulse-dev pandoc
 cargo install --path . --locked
 ./install.sh
 cd ~/tmp
@@ -74,7 +73,7 @@ echo ''
 
 echo '==================== Get OpenGL and GLFW dependencies ===================='
 echo ' '
-sudo apt install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
+sudo apt install -y libgl1-mesa-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libwayland-dev libxkbcommon-dev
 echo ''
 echo ''
 
@@ -87,8 +86,8 @@ echo ''
 echo '=============================== VulkanSDK ================================'
 echo ''
 # Copied for the specific version from https://vulkan.lunarg.com/sdk/home#linux
-wget -qO- https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo tee /etc/apt/trusted.gpg.d/lunarg.asc
-sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.3.236-jammy.list https://packages.lunarg.com/vulkan/1.3.236/lunarg-vulkan-1.3.236-jammy.list
+wget -qO - https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo apt-key add -
+sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.3.296-noble.list https://packages.lunarg.com/vulkan/1.3.296/lunarg-vulkan-1.3.296-noble.list
 sudo apt update
 sudo apt install -y vulkan-sdk
 echo ''
@@ -131,6 +130,12 @@ sudo snap install --classic code
 sudo snap install slack
 sudo snap install spotify
 sudo snap install telegram-desktop
+echo ''
+echo ''
+
+echo '=========================== Get zed =========================='
+echo ''
+curl -f https://zed.dev/install.sh | sh
 echo ''
 echo ''
 
