@@ -1,0 +1,38 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "base_keymap": "VSCode",
+  "vim_mode": true,
+  "ui_font_size": 15,
+  "buffer_font_family": "Intel One Mono",
+  "buffer_font_size": 12,
+  "relative_line_numbers": true,
+  "theme": {
+    "mode": "system",
+    "light": "VSCode Dark Modern",
+    "dark": "One Dark"
+  },
+  "lsp": {
+    // To make this work on windows, LLVM/bin needs to be in PATH and clangd.exe should be duplicated as clangd-15.exe
+    "clangd": {
+      "binary": {
+        "path": "clangd-18",
+        "arguments": ["--header-insertion=never"]
+      }
+    }
+  },
+  "file_types": {
+    // Most of the json I touch permit and use comments
+    "JSONC": ["*.json"]
+  }
+}
