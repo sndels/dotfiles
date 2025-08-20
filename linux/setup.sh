@@ -28,7 +28,7 @@ echo ''
 
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang-18 clangd-18 clang-tidy-18 clang-format-18 valgrind curl zsh htop python3-pip python3-venv black ninja-build ripgrep mold pulseaudio
+sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build ripgrep mold pulseaudio
 echo ''
 #echo 'Install libstdc++-12-dev as a workaround for broken clang'
 # Seems like some 22.04 update and/or installing gcc-12 through some package dependency breaks things
