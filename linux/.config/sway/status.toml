@@ -36,7 +36,7 @@ invert_icons = true
 
 [[block]]
 block = "custom"
-command = "[ -d /proc/sys/net/ipv4/conf/tun0 ] && echo '  \uf023 ' || echo '  \uf09c '"
+command = "nmcli con show --active | grep -q -i vpn && echo '  \uf023 ' || echo '  \uf09c '"
 interval = 5
 
 [[block]]
