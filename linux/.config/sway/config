@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term ghostty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -242,6 +242,9 @@ bar {
 
 # Set up floating for some apps/windows
 for_window [title="UnityEditor.(.*)"] floating enable
+# All Godot windows have the same class and instance name so let's float
+# everything by default and the editor can be unfloated manually
+for_window [class="Godot"] floating enable
 
 # Setup lock on lid close
 bindswitch lid:on exec ~/bin/lock
