@@ -24,15 +24,6 @@
     "light": "One Light",
     "dark": "VSCode Dark Modern"
   },
-  "lsp": {
-    // To make this work on windows, LLVM/bin needs to be in PATH and clangd.exe should be duplicated as clangd-15.exe
-    "clangd": {
-      "binary": {
-        "path": "clangd-18",
-        "arguments": ["--header-insertion=never"]
-      }
-    }
-  },
   "file_types": {
     // Most of the json I touch permit and use comments
     "JSONC": ["*.json"]
