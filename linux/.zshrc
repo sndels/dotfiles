@@ -9,7 +9,6 @@ export DEFAULT_USER=$USER
 plugins=(git)
 
 alias vim=nvim
-alias ccmake='CXX=clang++ CC=clang cmake'
 
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
@@ -18,4 +17,5 @@ if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
+source $HOME/vulkan/1.4.328.1/setup-env.sh
 source $ZSH/oh-my-zsh.sh

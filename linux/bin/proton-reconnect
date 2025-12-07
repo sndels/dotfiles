@@ -1,4 +1,4 @@
 #!/bin/sh
 
-protonvpn-cli disconnect
-protonvpn-cli connect --sc
+protonvpn disconnect
+protonvpn connect SE-FI#1

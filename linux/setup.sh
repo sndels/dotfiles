@@ -2,12 +2,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 mkdir -p ~/tmp
-cd ~/tmp
 
 echo '======================= Setup package repositories ======================='
 echo ''
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.6_all.deb
-sudo dpkg -i protonvpn-stable-release_1.0.6_all.deb
+cd ~/tmp
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
+sudo dpkg -i protonvpn-stable-release_1.0.8_all.deb
 echo ''
 echo ''
 
@@ -18,30 +18,25 @@ sudo apt dist-upgrade -y
 echo ''
 echo ''
 
-echo '=========== Install AMD proprietary vulkan driver (RT support) ==========='
-echo ''
-wget http://repo.radeon.com/amdgpu-install/6.2.4/ubuntu/noble/amdgpu-install_6.2.60204-1_all.deb
-sudo apt update
-sudo amdgpu-install -y --usecase=graphics --vulkan=pro --accept-eula
-echo ''
-echo ''
-
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build ripgrep mold pulseaudio
+sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build ripgrep mold pulseaudio minisig librewolf
 echo ''
-#echo 'Install libstdc++-12-dev as a workaround for broken clang'
-# Seems like some 22.04 update and/or installing gcc-12 through some package dependency breaks things
-# sudo apt install -y libstdc++-12-dev
-#echo ''
-#echo ''
 
-echo '====================== Get kitty and setup terminal ======================'
+echo '====================== Get ghostty and setup terminal ======================'
 echo ''
-sudo apt install -y kitty
+cd ~/tmp
+wget https://ziglang.org/download/0.14.1/zig-x86_64-linux-0.14.1.tar.xz
+tar xf zig-x86_64-linux-0.14.1.tar.xz
+wget https://release.files.ghostty.org/1.2.3/ghostty-1.2.3.tar.gz
+tar xf ghostty-1.2.3.tar.gz
+sudo apt install libgtk-4-dev libadwaita-1-dev gettext libxml2-utils
+cd ghostty-1.2.3
+../zig-x86_64-linux-0.14.1/zig build -p $HOME/.local -Doptimize=ReleaseFast -fno-sys=gtk4-layer-shell
+cd ~/tmp
 RUNZSH=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 echo ''
-echo 'Running default terminal selection, pick kitty'
+echo 'Running default terminal selection, pick ghostty'
 sudo update-alternatives --config x-terminal-emulator
 echo ''
 echo ''
@@ -52,6 +47,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 echo ''
 echo ''
 
+echo '================================ Get sourcegit ================================'
+echo ''
+cd ~/tmp
+wget https://github.com/sourcegit-scm/sourcegit/releases/download/v2025.39/sourcegit_2025.39-1_amd64.deb
+sudo apt install ./sourcegit_2025.39-1_amd64.deb
+echo ''
+echo ''
+
+
 echo '========================== Get sway and friends =========================='
 echo ''
 sudo apt install -y sway dmenu brightnessctl swaylock grimshot
@@ -61,9 +65,10 @@ sudo gpasswd -a $USER video
 
 echo '==================== Install i3status-rs from source ====================='
 echo ''
+cd ~/tmp
 git clone https://github.com/greshake/i3status-rust.git
 cd i3status-rust
-git checkout v0.30.4
+git checkout v0.33.2
 sudo apt install -y libssl-dev libsensors-dev libpulse-dev pandoc
 cargo install --path . --locked
 ./install.sh
@@ -86,10 +91,13 @@ echo ''
 echo '=============================== VulkanSDK ================================'
 echo ''
 # Copied for the specific version from https://vulkan.lunarg.com/sdk/home#linux
-wget -qO - https://packages.lunarg.com/lunarg-signing-key-pub.asc | sudo apt-key add -
-sudo wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.3.296-noble.list https://packages.lunarg.com/vulkan/1.3.296/lunarg-vulkan-1.3.296-noble.list
-sudo apt update
-sudo apt install -y vulkan-sdk
+cd ~/tmp
+wget https://sdk.lunarg.com/sdk/download/1.4.328.1/linux/vulkansdk-linux-x86_64-1.4.328.1.tar.xz
+tar xf vulkansdk-linux-x86_64-1.4.328.1.tar.xz
+mkdir ~/vulkan
+cp -r 1.4.328.1 ~/vulkan/
+sudo apt install libxcb-xinput0 libxcb-xinerama0 libxcb-cursor-dev
+# vulkan setup-env.sh is sourced in .zshrc
 echo ''
 echo ''
 
@@ -102,6 +110,7 @@ echo ''
 
 echo '=============================== Get fonts ================================'
 echo ''
+cd ~/tmp
 sudo apt install -y fonts-firacode fonts-font-awesome
 wget https://github.com/intel/intel-one-mono/releases/download/V1.3.0/ttf.zip
 unzip ttf.zip
@@ -119,14 +128,20 @@ cp -r $DIR/.config/. ~/.config
 mkdir -p ~/bin
 cp -r $DIR/bin/. ~/bin
 cp -r $DIR/../common/. ~/
-rm nvimsetup.sh
-wget https://github.com/Wilfred/difftastic/releases/download/0.58.0/difft-x86_64-unknown-linux-gnu.tar.gz
+echo ''
+echo ''
+
+echo '======================== Get difftastic ======================='
+echo ''
+cd ~/tmp
+wget https://github.com/Wilfred/difftastic/releases/download/0.67.0/difft-x86_64-unknown-linux-gnu.tar.gz
 tar xf difft-x86_64-unknown-linux-gnu.tar.gz
 mv difft ~/bin
-
-echo '=========================== Get stuff from snap =========================='
 echo ''
-sudo snap install --classic code
+echo ''
+
+echo '=========================== Get more stuff from snap =========================='
+echo ''
 sudo snap install slack
 sudo snap install spotify
 sudo snap install telegram-desktop
@@ -139,31 +154,18 @@ curl -f https://zed.dev/install.sh | sh
 echo ''
 echo ''
 
-echo '============================== Setup vscode =============================='
-echo ''
-mkdir -p ~/.config/Code/User
-cp $DIR/vscode.json ~/.config/Code/User/settings.json
-code --install-extension joshneta.65816-assembly
-code --install-extension bungcip.better-toml
-code --install-extension ms-vscode.cpptools
-code --install-extension xaver.clang-format
-code --install-extension josetr.cmake-language-support-vscode
-code --install-extension vadimcn.vscode-lldb
-code --install-extension usernamehw.errorlens
-code --install-extension eamodio.gitlens
-code --install-extension ms-vscode.hexeditor
-code --install-extension ms-python.isort
-code --install-extension ms-python.python
-code --install-extension rust-lang.rust-analyzer
-code --install-extension slevesque.shader
-code --install-extension vscodevim.vim
-code --install-extension sndels.vulkan-api-docs
-echo ''
-echo ''
-
 echo '============================== Get ProtonVPN ============================='
 echo ''
 sudo apt install -y protonvpn
+sudo apt install -y proton-vpn-cli
+echo ''
+echo ''
+
+echo '============================== Get Steam ============================='
+echo ''
+cd ~/tmp
+wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
+sudo apt install ./steam.deb
 echo ''
 echo ''
 
