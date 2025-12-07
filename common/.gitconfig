@@ -26,7 +26,7 @@
         co = checkout
         pu = push
         puu = !git push -u origin `git symbolic-ref --short HEAD`
-        puf = push --force-with-lease
+        puf = push --force-with-lease --force-if-includes
         adup = add -up
         adu = add -u
 [diff]
@@ -34,6 +34,8 @@
 [difftool]
         prompt = false
 [difftool "difftastic"]
-        cmd = difft --display inline "$LOCAL" "$REMOTE"
+        cmd = difft --display side-by-side "$LOCAL" "$REMOTE"
 [pager]
         difftool = true
+[init]
+        defaultBranch = main
