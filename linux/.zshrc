@@ -17,5 +17,5 @@ if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
     source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
 fi
 
-source $HOME/vulkan/1.4.328.1/setup-env.sh
+source $HOME/vulkan/1.4.335.0/setup-env.sh
 source $ZSH/oh-my-zsh.sh

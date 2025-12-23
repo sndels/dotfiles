@@ -92,10 +92,10 @@ echo '=============================== VulkanSDK ================================
 echo ''
 # Copied for the specific version from https://vulkan.lunarg.com/sdk/home#linux
 cd ~/tmp
-wget https://sdk.lunarg.com/sdk/download/1.4.328.1/linux/vulkansdk-linux-x86_64-1.4.328.1.tar.xz
-tar xf vulkansdk-linux-x86_64-1.4.328.1.tar.xz
+wget https://sdk.lunarg.com/sdk/download/1.4.335.0/linux/vulkansdk-linux-x86_64-1.4.335.0.tar.xz
+tar xvf vulkansdk-linux-x86_64-1.4.335.0.tar.xz
 mkdir ~/vulkan
-cp -r 1.4.328.1 ~/vulkan/
+cp -r 1.4.335.0 ~/vulkan/
 sudo apt install libxcb-xinput0 libxcb-xinerama0 libxcb-cursor-dev
 # vulkan setup-env.sh is sourced in .zshrc
 echo ''
