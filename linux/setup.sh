@@ -20,7 +20,14 @@ echo ''
 
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build ripgrep mold pulseaudio minisig librewolf
+sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build mold pulseaudio
+echo ''
+
+echo '============================= Get librewolf ============================'
+echo ''
+sudo apt update && sudo apt install extrepo -y
+sudo extrepo enable librewolf
+sudo apt update && sudo apt install librewolf -y
 echo ''
 
 echo '====================== Get ghostty and setup terminal ======================'
@@ -84,7 +91,7 @@ echo ''
 
 echo '===================== Get Rust windowing dependencies ===================='
 echo ' '
-sudo apt install -y librust-atk-dev libgtk-3-dev
+sudo apt install -y libgtk-3-dev
 echo ''
 echo ''
 
