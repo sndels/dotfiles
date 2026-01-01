@@ -3,14 +3,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 mkdir -p ~/tmp
 
-echo '======================= Setup package repositories ======================='
-echo ''
-cd ~/tmp
-wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
-sudo dpkg -i protonvpn-stable-release_1.0.8_all.deb
-echo ''
-echo ''
-
 echo '============================== Get updates ==============================='
 echo ''
 sudo apt update
@@ -163,6 +155,9 @@ echo ''
 
 echo '============================== Get ProtonVPN ============================='
 echo ''
+cd ~/tmp
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.8_all.deb
+sudo dpkg -i protonvpn-stable-release_1.0.8_all.deb
 sudo apt install -y protonvpn
 sudo apt install -y proton-vpn-cli
 echo ''
