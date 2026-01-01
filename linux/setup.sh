@@ -12,7 +12,7 @@ echo ''
 
 echo '============================= Get basic utils ============================'
 echo ''
-sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build mold pulseaudio
+sudo apt install -y build-essential git cmake clang-19 clangd-19 clang-tidy-19 clang-format-19 valgrind curl zsh htop python3-pip python3-venv black ninja-build mold pulseaudio || exit 1
 echo ''
 
 echo '============================= Get librewolf ============================'
