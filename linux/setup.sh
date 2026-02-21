@@ -142,7 +142,6 @@ echo ''
 echo '=========================== Get more stuff from snap =========================='
 echo ''
 sudo snap install slack
-sudo snap install spotify
 sudo snap install telegram-desktop
 echo ''
 echo ''
@@ -168,6 +167,14 @@ echo ''
 cd ~/tmp
 wget https://cdn.fastly.steamstatic.com/client/installer/steam.deb
 sudo apt install ./steam.deb
+echo ''
+echo ''
+
+echo '=========================== Get tidal =========================='
+echo ''
+cd ~/tmp
+wget https://github.com/Mastermindzh/tidal-hifi/releases/download/6.1.0/tidal-hifi_6.1.0_amd64.deb
+sudo apt install ./tidal-hifi_6.1.0_amd64.deb
 echo ''
 echo ''
 

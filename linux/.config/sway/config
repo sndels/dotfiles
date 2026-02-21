@@ -114,9 +114,9 @@ input "2:10:TPPS/2_Elan_TrackPoint" {
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
     # Music controls
-    bindsym $mod+Shift+Down exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-    bindsym $mod+Shift+Left exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-    bindsym $mod+Shift+Right exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+    bindsym $mod+Shift+Down exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.tidal-hifi /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+    bindsym $mod+Shift+Left exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.tidal-hifi /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+    bindsym $mod+Shift+Right exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.tidal-hifi /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
 
 #
 # Moving around:

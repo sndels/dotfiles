@@ -19,7 +19,7 @@ ignore_phased_updates = true
 block = "custom"
 interval = 10
 hide_when_empty = true
-command = "python3 ~/.config/sway/spotify_status.py"
+command = "python3 ~/.config/sway/media_status.py"
 
 [[block]]
 block = "custom"
