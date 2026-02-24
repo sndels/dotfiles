@@ -178,6 +178,14 @@ sudo apt install ./tidal-hifi_6.1.0_amd64.deb
 echo ''
 echo ''
 
+echo '=========================== Get renderdoc =========================='
+echo ''
+cd ~/Downloads
+wget https://renderdoc.org/stable/1.42/renderdoc_1.42.tar.gz
+tar xf renderdoc_1.42.tar.gz
+echo ''
+echo ''
+
 
 if [ ! -f ~/.ssh/id_ed25519 ]
 then

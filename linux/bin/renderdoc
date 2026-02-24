@@ -1,0 +1,2 @@
+# Renderdoc doesn't support wayland
+env -u WAYLAND_DISPLAY ~/Downloads/renderdoc_1.42/bin/qrenderdoc
