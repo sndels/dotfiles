@@ -78,3 +78,39 @@ interval = 10
 format = "  $icon $percentage $time "
 if_command = "test -e /sys/class/power_supply/BAT0"
 
+[[block]]
+block = "menu"
+text = "  \uf030 "
+[[block.items]]
+display = " -&gt; Area &lt;-"
+cmd = "gshot_area"
+[[block.items]]
+display = " -&gt; Window &lt;-"
+cmd = "gshot_window"
+[[block.items]]
+display = " -&gt; Screen &lt;-"
+cmd = "gshot_screen"
+
+[[block]]
+block = "menu"
+text = "  \uf0C9 "
+[[block.items]]
+display = " -&gt;    Power Off    &lt;-"
+cmd = "poweroff"
+confirm_msg = "Are you sure you want to power off?"
+[[block.items]]
+display = " -&gt;     Reboot      &lt;-"
+cmd = "reboot"
+confirm_msg = "Are you sure you want to reboot?"
+[[block.items]]
+display = " -&gt;      Sleep      &lt;-"
+cmd = "lock && systemctl suspend"
+[[block.items]]
+display = " -&gt;  Reconnect VPN  &lt;-"
+cmd = "proton-reconnect"
+[[block.items]]
+display = " -&gt;  Disconnect VPN  &lt;-"
+cmd = "protonvpn disconnect"
+[[block.items]]
+display = " -&gt; Connect Fiio BT &lt;-"
+cmd = "connect-fiio-bt"
