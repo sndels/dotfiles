@@ -253,7 +253,7 @@ bindswitch lid:on exec ~/bin/lock
 default_border pixel
 
 # Services required by protonvpn(-cli), disconnect first to avoid connection hang
-exec protonvpn-cli disconnect
+exec protonvpn disconnect
 exec nm-applet
 exec gnome-keyring-daemon --start
 
